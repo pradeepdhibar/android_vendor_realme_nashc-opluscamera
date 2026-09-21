@@ -1,0 +1,28 @@
+--- a/arch/arm64/configs/nashc_defconfig
++++ b/arch/arm64/configs/nashc_defconfig
+@@ -476,3 +476,4 @@
+ CONFIG_ANDROID_SIMPLE_LMK_MINFREE=226
+ CONFIG_ANDROID_SIMPLE_LMK_TIMEOUT_MSEC=150
+ CONFIG_MTK_AAL_SUPPORT=y
++CONFIG_MTK_CAMERA_ISP_OWE_SUPPORT=y
+--- a/drivers/misc/mediatek/cameraisp/Kconfig
++++ b/drivers/misc/mediatek/cameraisp/Kconfig
+@@ -7,7 +7,7 @@
+ 	  camera drivers from being built into the
+ 	  kernel image.
+ 
+-#source "drivers/misc/mediatek/cameraisp/owe/Kconfig"
++source "drivers/misc/mediatek/cameraisp/owe/Kconfig"
+ source "drivers/misc/mediatek/cameraisp/rsc/Kconfig"
+ source "drivers/misc/mediatek/cameraisp/wpe/Kconfig"
+ source "drivers/misc/mediatek/cameraisp/dpe/Kconfig"
+--- a/drivers/misc/mediatek/cameraisp/Makefile
++++ b/drivers/misc/mediatek/cameraisp/Makefile
+@@ -24,3 +24,7 @@
+ #endif
+ obj-$(CONFIG_MTK_CAMERA_ISP_MFB_SUPPORT) += mfb/
+ obj-$(CONFIG_MTK_CAMERA_ISP_FD_SUPPORT) += fdvt/
++
++ifeq ($(CONFIG_MACH_MT6785),y)
++obj-y += owe/
++endif
