@@ -1,0 +1,1 @@
+get_prop(mtk_hal_camera, exported_system_prop)

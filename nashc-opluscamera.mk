@@ -6,7 +6,7 @@
 NASHC_OPLUS_CAMERA_PATH := vendor/realme/nashc-opluscamera
 
 # OplusCamera properties
-PRODUCT_VENDOR_PROPERTIES += \
+PRODUCT_SYSTEM_PROPERTIES += \
     oplus.camera.packname=com.oplus.camera
 
 PRODUCT_PACKAGES += \
