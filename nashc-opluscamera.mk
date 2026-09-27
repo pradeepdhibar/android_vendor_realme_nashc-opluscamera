@@ -5,6 +5,10 @@
 # refer to the caller or be empty during product configuration.
 NASHC_OPLUS_CAMERA_PATH := vendor/realme/nashc-opluscamera
 
+# OplusCamera properties
+PRODUCT_VENDOR_PROPERTIES += \
+    oplus.camera.packname=com.oplus.camera
+
 PRODUCT_PACKAGES += \
     libAPSClient-cmd-jni \
     libAPSClient-jni \
